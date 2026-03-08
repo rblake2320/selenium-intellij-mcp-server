@@ -1,0 +1,170 @@
+{
+  "id": "adb2bedb-2d45-44e7-88f0-0c5706c3d88a",
+  "version": "2.0",
+  "name": "bestbuy-ps5-checkout",
+  "url": "https://www.bestbuy.com",
+  "tests": [
+    {
+      "id": "d3ead976-c869-48e5-bb9b-c79bd3fe59a9",
+      "name": "bestbuy-ps5-checkout",
+      "commands": [
+        {
+          "id": "cmd-0",
+          "command": "open",
+          "target": "https://www.bestbuy.com",
+          "targets": [["https://www.bestbuy.com", "open"]],
+          "value": "",
+          "comment": ""
+        },
+        {
+          "id": "cmd-1",
+          "command": "waitForTitle",
+          "target": "Best Buy",
+          "targets": [["Best Buy", "waitForTitle"]],
+          "value": "",
+          "comment": ""
+        },
+        {
+          "id": "cmd-2",
+          "command": "click",
+          "target": "css=button[aria-label='Close']",
+          "targets": [["css=button[aria-label='Close']", "click"]],
+          "value": "",
+          "comment": "Dismiss popup"
+        },
+        {
+          "id": "cmd-3",
+          "command": "click",
+          "target": "css=input#gh-search-input",
+          "targets": [["css=input#gh-search-input", "click"]],
+          "value": "",
+          "comment": "Focus search bar"
+        },
+        {
+          "id": "cmd-4",
+          "command": "type",
+          "target": "css=input#gh-search-input",
+          "targets": [["css=input#gh-search-input", "type"]],
+          "value": "ps5 console",
+          "comment": "Type search query"
+        },
+        {
+          "id": "cmd-5",
+          "command": "sendKeys",
+          "target": "css=input#gh-search-input",
+          "targets": [["css=input#gh-search-input", "sendKeys"]],
+          "value": "${KEY_ENTER}",
+          "comment": "Submit search"
+        },
+        {
+          "id": "cmd-6",
+          "command": "waitForElementPresent",
+          "target": "css=.sku-item",
+          "targets": [["css=.sku-item", "waitForElementPresent"]],
+          "value": "",
+          "comment": "Wait for search results"
+        },
+        {
+          "id": "cmd-7",
+          "command": "click",
+          "target": "xpath=//a[contains(text(),'PlayStation 5') and contains(text(),'Console')]",
+          "targets": [["xpath=//a[contains(text(),'PlayStation 5') and contains(text(),'Console')]", "click"]],
+          "value": "",
+          "comment": "Select PS5 console"
+        },
+        {
+          "id": "cmd-8",
+          "command": "waitForElementPresent",
+          "target": "css=button[data-button-state='ADD_TO_CART']",
+          "targets": [["css=button[data-button-state='ADD_TO_CART']", "waitForElementPresent"]],
+          "value": "",
+          "comment": "Wait for Add to Cart button"
+        },
+        {
+          "id": "cmd-9",
+          "command": "click",
+          "target": "css=button[data-button-state='ADD_TO_CART']",
+          "targets": [["css=button[data-button-state='ADD_TO_CART']", "click"]],
+          "value": "",
+          "comment": "Add PS5 to cart"
+        },
+        {
+          "id": "cmd-10",
+          "command": "waitForElementPresent",
+          "target": "css=.go-to-cart-button",
+          "targets": [["css=.go-to-cart-button", "waitForElementPresent"]],
+          "value": "",
+          "comment": "Wait for Go to Cart overlay"
+        },
+        {
+          "id": "cmd-11",
+          "command": "click",
+          "target": "css=.go-to-cart-button",
+          "targets": [["css=.go-to-cart-button", "click"]],
+          "value": "",
+          "comment": "Go to cart"
+        },
+        {
+          "id": "cmd-12",
+          "command": "waitForElementPresent",
+          "target": "css=.cart-item",
+          "targets": [["css=.cart-item", "waitForElementPresent"]],
+          "value": "",
+          "comment": "Wait for cart to load"
+        },
+        {
+          "id": "cmd-13",
+          "command": "click",
+          "target": "css=button[data-testid='checkout-button']",
+          "targets": [["css=button[data-testid='checkout-button']", "click"]],
+          "value": "",
+          "comment": "Click Checkout"
+        },
+        {
+          "id": "cmd-14",
+          "command": "waitForElementPresent",
+          "target": "css=button[data-testid='guest-checkout']",
+          "targets": [["css=button[data-testid='guest-checkout']", "waitForElementPresent"]],
+          "value": "",
+          "comment": "Wait for guest option"
+        },
+        {
+          "id": "cmd-15",
+          "command": "click",
+          "target": "css=button[data-testid='guest-checkout']",
+          "targets": [["css=button[data-testid='guest-checkout']", "click"]],
+          "value": "",
+          "comment": "Continue as Guest"
+        },
+        {
+          "id": "cmd-16",
+          "command": "waitForUrlContains",
+          "target": "checkout",
+          "targets": [["checkout", "waitForUrlContains"]],
+          "value": "",
+          "comment": "Wait for checkout page"
+        },
+        {
+          "id": "cmd-17",
+          "command": "assertUrlContains",
+          "target": "checkout",
+          "targets": [["checkout", "assertUrlContains"]],
+          "value": "",
+          "comment": "Verify checkout reached — STOP HERE"
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "6e956f3d-a1f1-4009-ad7b-d57d3b41a445",
+      "name": "Default Suite",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": ["d3ead976-c869-48e5-bb9b-c79bd3fe59a9"]
+    }
+  ],
+  "urls": ["https://www.bestbuy.com"],
+  "plugins": []
+}
