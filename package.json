@@ -1,0 +1,33 @@
+{
+  "name": "selenium-intellij-mcp-server",
+  "version": "1.0.0",
+  "description": "Comprehensive MCP server for Selenium WebDriver, IntelliJ IDEA, JUnit/TestNG, Grid, and Page Object Model management",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "selenium-intellij-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "axios": "^1.7.9",
+    "express": "^4.21.0",
+    "selenium-webdriver": "^4.27.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.0",
+    "@types/selenium-webdriver": "^4.35.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
